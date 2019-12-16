@@ -49,7 +49,7 @@ export class Main{
           .put('background',new Background())
           .put('land',new Land())
           .put('pipes',[])
-          .put('birds',new Birds())
+          .put('birds',new Birds());
 
 
     this.addClick();
