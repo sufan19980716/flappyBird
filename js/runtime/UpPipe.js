@@ -4,7 +4,6 @@ import { Sprite } from "../base/Sprite.js";
 export class UpPipe extends Pipe{
     constructor(top){
         const img = Sprite.getImage('upPipe');
-        console.log(img);
         super(img,top);
     }
 
