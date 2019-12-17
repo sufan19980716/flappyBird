@@ -30,36 +30,31 @@ export class Birds extends Sprite{
     this.time = 0;//计时器,自由落体时间
   }
 
-
-    draw(){
-        this.count += 0.2;
-        if(this.index>=2){
-            this.count = 0;
-        }
-        this.index = Math.floor(this.count);
-
-
-        const g = 0.98/2.4;//模拟的重力加速度
-        const offSetUp = 30;//向上的偏移量
-        const offSetY = (g*this.time*(this.time-offSetUp))/2;
-
-
-        for(let i=0;i<3;i++){
-            this.birdsY[i] = this.y[i]+offSetY;
-        }
-
-
-        this.time++;
-
-
-        super.draw(this.img,
-            this.clippingX[this.index],
-            this.clippingY[this.index],
-            this.clippingWidth[this.index],
-            this.clippingHeight[this.index],
-            this.birdsX[this.index],
-            this.birdsY[this.index],
-            this.birdsWidth[this.index],
-            this.birdsHeight[this.index]);
+  draw(){
+    this.count += 0.2;
+    if(this.index>=2){
+      this.count = 0;
     }
+    this.index = Math.floor(this.count);
+
+    const g = 0.98/2.4;//模拟的重力加速度
+    const offSetUp = 30;//向上的偏移量
+    const offSetY = (g*this.time*(this.time-offSetUp))/2;
+    
+    for(let i=0;i<3;i++){
+      this.birdsY[i] = this.y[i]+ offSetY;
+    }
+
+    this.time++;
+
+    super.draw(this.img,
+      this.clippingX[this.index],
+      this.clippingY[this.index],
+      this.clippingWidth[this.index],
+      this.clippingHeight[this.index],
+      this.birdsX[this.index],
+      this.birdsY[this.index],
+      this.birdsWidth[this.index],
+      this.birdsHeight[this.index]);
+  }
 }

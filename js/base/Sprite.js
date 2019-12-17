@@ -13,6 +13,7 @@ import { DataStore } from "./DataStore.js";
  */
 export class Sprite{
   constructor(img=null,srcX=0,srcY=0,srcW=0,srcH=0,x=0,y=0,width=0,height=0){
+    // console.log('Sprite构造执行了');
     this.ctx = DataStore.getInstance().ctx;
     this.img = img;
     this.srcX = srcX;
@@ -34,6 +35,6 @@ export class Sprite{
 
   // 获取图片的方法
   static getImage(key){
-    return DataStore.getInstance().map.get(key);
+    return DataStore.getInstance().imgs.get(key);
   }
 }
